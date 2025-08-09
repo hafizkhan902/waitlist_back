@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waitlist Registration Confirmed</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .confirmation-message {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .confirmation-message h2 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .confirmation-message p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .success-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .registration-details {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 4px solid #2196F3;
+        }
+        
+        .registration-details h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .detail-item:last-child {
+            border-bottom: none;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #495057;
+        }
+        
+        .detail-value {
+            color: #6c757d;
+        }
+        
+        .status-badge {
+            background-color: #e8f5e8;
+            color: #155724;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .what-happens-next {
+            background-color: #fff3cd;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .what-happens-next h3 {
+            color: #856404;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .what-happens-next ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .what-happens-next li {
+            padding: 8px 0;
+            color: #856404;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .what-happens-next li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #ffc107;
+            font-weight: bold;
+        }
+        
+        .footer {
+            background-color: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .footer p {
+            color: #6c757d;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .footer a {
+            color: #2196F3;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .contact-info p {
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 10px;
+                border-radius: 5px;
+            }
+            
+            .header, .content, .footer {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .confirmation-message h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h1>✅ Registration Confirmed</h1>
+            <p>You're successfully added to our waitlist</p>
+        </div>
+        
+        <div class="content">
+            <div class="confirmation-message">
+                <div class="success-icon">🎉</div>
+                <h2>Hello {{name}}!</h2>
+                <p>Great news! Your waitlist registration has been confirmed successfully.</p>
+                <p>You're now officially part of our exclusive community and will be among the first to know when we launch.</p>
+            </div>
+            
+            
+            <div class="what-happens-next">
+                <h3>What Happens Next?</h3>
+                <ul>
+                    {{!-- <li>We'll send you regular updates on our development progress</li> --}}
+                    <li>You'll get exclusive early access when we launch</li>
+                    <li>Receive special offers and discounts as a waitlist member</li>
+                    <li>Be the first to test new features and provide feedback</li>
+                </ul>
+            </div>
+            
+            <p style="text-align: center; margin-top: 30px; color: #6c757d;">
+                <strong>Thank you for your patience and support!</strong><br>
+                We're working hard to bring you something amazing.
+            </p>
+        </div>
+        
+        <div class="footer">
+            <p>If you have any questions, please don't hesitate to reach out.</p>
+            
+            <div class="contact-info">
+                <p><strong>Need Help?</strong></p>
+                <p>Email: <a href="info@newronx.com">info@newronx.com</a></p>
+                <p>Website: <a href="https://www.newronx.com">newronx.com</a></p>
+            </div>
+            
+            <p style="margin-top: 20px; font-size: 12px; color: #adb5bd;">
+                © 2025 Newronx. All rights reserved.
+            </p>
+        </div>
+    </div>
+</body>
+</html> 
