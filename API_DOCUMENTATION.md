@@ -2,7 +2,7 @@
 
 ## Base URL
 ```
-http://localhost:2000
+https://api.newronx.com
 ```
 
 ## Authentication Endpoints
@@ -15,7 +15,7 @@ http://localhost:2000
 **Request:**
 ```javascript
 // Redirect user to this URL
-window.location.href = 'http://localhost:2000/api/auth/google';
+window.location.href = 'https://api.newronx.com/api/auth/google';
 ```
 
 **Response:** Redirects to Google OAuth consent screen
