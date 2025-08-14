@@ -1,5 +1,6 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+require('./env');
 const Waitlist = require('../models/Waitlist');
 
 // Serialize user for the session

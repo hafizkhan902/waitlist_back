@@ -5,11 +5,11 @@ const session = require('express-session');
 const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
-require('dotenv').config();
+require('./config/env');
 
 const app = express();
 app.set('trust proxy', 1);
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 // Import passport configuration
 require('./config/passport');
@@ -55,7 +55,7 @@ app.use(passport.session());
 
 // Database connection
 mongoose.connect(process.env.MONGODB_URL)
-  .then(() => console.log('Connected to MongoDB'))
+  .then(() => {})
   .catch(err => console.error('MongoDB connection error:', err));
 
 // Routes
@@ -79,5 +79,5 @@ app.use('*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  
 }); 

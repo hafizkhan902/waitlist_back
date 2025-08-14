@@ -354,39 +354,6 @@ router.put('/update-phone/:id', async (req, res) => {
   }
 });
 
-// Test email service
-router.get('/test-email', async (req, res) => {
-  try {
-    const testUser = {
-      email: 'test@example.com',
-      phone: '+1234567890',
-      googleProfile: { name: 'Test User' },
-      source: 'manual',
-      joinedAt: new Date()
-    };
-
-    const result = await emailService.sendWelcomeEmail(testUser);
-    
-    if (result) {
-      res.json({
-        success: true,
-        message: 'Test email sent successfully'
-      });
-    } else {
-      res.status(500).json({
-        success: false,
-        error: 'Failed to send test email'
-      });
-    }
-  } catch (error) {
-    console.error('Error sending test email:', error);
-    res.status(500).json({
-      success: false,
-      error: 'Error sending test email'
-    });
-  }
-});
-
 // Get user's referral code
 router.get('/referral-code/:email', async (req, res) => {
   try {

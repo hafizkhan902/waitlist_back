@@ -2,6 +2,7 @@ const nodemailer = require('nodemailer');
 const handlebars = require('handlebars');
 const fs = require('fs').promises;
 const path = require('path');
+require('../config/env');
 
 class EmailService {
   constructor() {
@@ -84,16 +85,10 @@ class EmailService {
             <h2>Hi {{name}}!</h2>
             <p>Thank you for joining our waitlist! We're excited to have you on board.</p>
             <p>Here are your details:</p>
-            <ul>
-              <li><strong>Email:</strong> {{email}}</li>
-              <li><strong>Phone:</strong> {{phone}}</li>
-              <li><strong>Joined:</strong> {{joinedDate}}</li>
-            </ul>
             <p>We'll keep you updated on our progress and let you know as soon as we launch!</p>
             <p>Best regards,<br>The Team</p>
           </div>
           <div class="footer">
-            <p>You received this email because you joined our waitlist.</p>
             <p>If you didn't sign up, please ignore this email.</p>
           </div>
         </div>
@@ -183,8 +178,7 @@ class EmailService {
       };
 
       const result = await this.transporter.sendMail(mailOptions);
-      console.log('Welcome email sent successfully:', result.messageId);
-      return true;
+      return !!result?.messageId;
 
     } catch (error) {
       console.error('Error sending welcome email:', error);
@@ -227,8 +221,7 @@ class EmailService {
       };
 
       const result = await this.transporter.sendMail(mailOptions);
-      console.log('Confirmation email sent successfully:', result.messageId);
-      return true;
+      return !!result?.messageId;
 
     } catch (error) {
       console.error('Error sending confirmation email:', error);

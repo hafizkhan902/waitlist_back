@@ -77,7 +77,7 @@ router.get('/google/callback',
     }));
 
     // Redirect to frontend with success data
-    res.redirect(`${process.env.FRONTEND_URL || 'http://localhost:3000'}/auth/success?data=${userData}`);
+    res.redirect(`${process.env.FRONTEND_URL || 'https://newronx.com'}/auth/success?data=${userData}`);
   }
 );
 
@@ -89,7 +89,7 @@ router.get('/failure', (req, res) => {
   }));
   
   // Redirect to frontend with error data
-  res.redirect(`${process.env.FRONTEND_URL || 'http://localhost:3000'}/auth/error?data=${errorData}`);
+  res.redirect(`${process.env.FRONTEND_URL || 'https://newronx.com'}/auth/error?data=${errorData}`);
 });
 
 // Logout route
